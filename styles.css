@@ -1,4 +1,4 @@
-/* Define the custom font using @font-face */
+/* Define the custom font using @font-face for Bad Coma */
 @font-face {
     font-family: 'Bad Coma';
     src: url('fonts/bad-coma/bad-coma.woff2') format('woff2'),
@@ -8,6 +8,9 @@
     font-style: normal;
 }
 
+/* Google font for the copyright logo (use any font you prefer) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 /* Apply the font and font color to the whole page */
 body {
     font-family: 'Bad Coma', sans-serif;
@@ -15,7 +18,7 @@ body {
     color: #003912; /* Dark green font color */
     height: 100%;
     padding-bottom: 30px;
-    font-size: 30px; /* Increase the font size globally */
+    font-size: 18px; /* Increase the font size globally */
 }
 
 /* Logo styling */
@@ -134,6 +137,14 @@ body {
     padding: 10px;
     width: 100%;
     text-align: center;
-    font-size: 50px; /* Increase font size for copyright */
+    font-size: 16px; /* Increase font size for copyright */
     z-index: 1000;
+}
+
+/* Apply a different font for the copyright logo part */
+.copyright .logo {
+    font-family: 'Roboto', sans-serif; /* Use Roboto for the logo */
+    font-size: 32px; /* Increase font size for the copyright symbol */
+    font-weight: 700; /* Make it bold */
+    margin-right: 5px;
 }
