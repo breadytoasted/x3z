@@ -80,7 +80,7 @@ body {
 
 .modal-content {
     position: relative;
-    background: #333; /* Dark background for modal */
+    background: #000000; /* Dark background for modal */
     padding: 20px;
     text-align: center;
     max-width: 80%;
