@@ -2,7 +2,7 @@ const images = document.querySelectorAll('.image');
 const modal = document.getElementById('modal');
 const modalImage = document.getElementById('modal-image');
 const modalText = document.getElementById('modal-text');
-const modalExtraText = document.getElementById('modal-extra-text'); // New extra text
+const modalExtraText = document.getElementById('modal-extra-text'); // Extra text under main text
 const closeModal = document.getElementById('close-modal');
 
 let currentLink = ""; // Store the link of the clicked image

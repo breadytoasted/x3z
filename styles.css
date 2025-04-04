@@ -16,6 +16,10 @@ body {
     height: 100%;
     padding-bottom: 30px;
     font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Logo styling */
@@ -92,23 +96,8 @@ body {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
-    cursor: pointer;  /* Shows it's clickable */
-    transition: opacity 0.3s ease;
 }
 
-.modal img:hover {
-    opacity: 0.8;  /* Slight fade to indicate interactivity */
-}
-
-/* "Click image to visit link" text */
-.click-to-open {
-    color: #bbb;
-    font-size: 16px;
-    margin-top: 10px;
-    opacity: 0.7;
-}
-
-/* Modal Text */
 .modal p {
     color: white;
     font-size: 22px;
@@ -116,13 +105,12 @@ body {
 
 /* Extra text inside the modal */
 #modal-extra-text {
-    color: #bbb; 
+    color: #bbb;
     font-size: 18px;
     margin-top: 5px;
     opacity: 0.8;
 }
 
-/* Close Button */
 .close {
     position: absolute;
     top: 10px;
