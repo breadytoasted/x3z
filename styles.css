@@ -1,11 +1,21 @@
-/* Basic styles for body */
+/* Define the custom font using @font-face for Bad Coma */
+@font-face {
+    font-family: 'Bad Coma';
+    src: url('fonts/bad-coma/bad-coma.woff2') format('woff2'),
+         url('fonts/bad-coma/bad-coma.woff') format('woff'),
+         url('fonts/bad-coma/bad-coma.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply the font and font color to the whole page */
 body {
     font-family: 'Bad Coma', sans-serif;
-    background-color: black;
-    color: #003912;
+    background-color: black; 
+    color: #003912; 
     height: 100%;
     padding-bottom: 30px;
-    font-size: 30px;
+    font-size: 18px;
 }
 
 /* Logo styling */
@@ -39,12 +49,12 @@ body {
     height: 200px;
     object-fit: cover;
     cursor: pointer;
-    border-radius: 50%; /* Makes images round */
+    border-radius: 50%; 
     transition: transform 1s ease;
 }
 
 .image:hover {
-    transform: rotate(360deg); /* Fast spin on hover */
+    transform: rotate(360deg);
 }
 
 /* Modal Styles */
@@ -109,13 +119,13 @@ body {
     padding: 10px;
     width: 100%;
     text-align: center;
-    font-size: 50px;
+    font-size: 16px;
     z-index: 1000;
 }
 
 .copyright .logo {
     font-family: 'Roboto', sans-serif;
-    font-size: 50px;
+    font-size: 32px;
     font-weight: 700;
     margin-right: 5px;
 }
