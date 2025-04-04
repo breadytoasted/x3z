@@ -18,7 +18,7 @@ body {
     color: #003912; /* Dark green font color */
     height: 100%;
     padding-bottom: 30px;
-    font-size: 30px; /* Increase the font size globally */
+    font-size: 18px; /* Increase the font size globally */
 }
 
 /* Logo styling */
@@ -72,8 +72,10 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* Spinning effect on hover */
 .image:hover {
-    transform: scale(1.1);
+    transform: rotate(360deg); /* Spin the image 360 degrees */
+    transition: transform 1s ease; /* Set the duration and ease for the spin */
 }
 
 .modal {
@@ -138,14 +140,14 @@ body {
     padding: 10px;
     width: 100%;
     text-align: center;
-    font-size: 50px; /* Increase font size for copyright */
+    font-size: 16px; /* Increase font size for copyright */
     z-index: 1000;
 }
 
 /* Apply a different font for the copyright logo part */
 .copyright .logo {
     font-family: 'Roboto', sans-serif; /* Use Roboto for the logo */
-    font-size: 50px; /* Increase font size for the copyright symbol */
+    font-size: 32px; /* Increase font size for the copyright symbol */
     font-weight: 700; /* Make it bold */
     margin-right: 5px;
 }
