@@ -11,7 +11,7 @@ let currentLink = ""; // Store the link of the clicked image
 images.forEach(image => {
     image.addEventListener('click', function () {
         modalImage.src = image.src;  
-        modalText.textContent = image.getAttribute('data-text','data-extra');  
+        modalText.textContent = image.getAttribute('data-text',);  
         modalExtraText.textContent = image.getAttribute('data-extra') || ""; // Set extra text (if exists)
         modal.classList.add('show');  
         currentLink = image.getAttribute('data-link'); 
