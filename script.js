@@ -2,18 +2,19 @@ const images = document.querySelectorAll('.image');
 const modal = document.getElementById('modal');
 const modalImage = document.getElementById('modal-image');
 const modalText = document.getElementById('modal-text');
-const modalExtraText = document.getElementById('modal-extra-text'); // New text element
+const modalExtraText = document.getElementById('modal-extra-text'); // Select the extra text element
 const closeModal = document.getElementById('close-modal');
 
 let currentLink = ""; // Store the link of the clicked image
 
 // Event listener for each image
 images.forEach(image => {
-    image.addEventListener('click', () => {
-        modalImage.src = image.src;
-        modalText.textContent = image.dataset.text;
-        modalExtraText.textContent = image.dataset.extraText; // Set the extra text
-        modal.style.display = 'block';
+    image.addEventListener('click', function () {
+        modalImage.src = image.src;  
+        modalText.textContent = image.getAttribute('data-text','data-extra');  
+        modalExtraText.textContent = image.getAttribute('data-extra') || ""; // Set extra text (if exists)
+        modal.classList.add('show');  
+        currentLink = image.getAttribute('data-link'); 
     });
 });
 
