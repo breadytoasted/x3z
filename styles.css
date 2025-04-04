@@ -18,7 +18,7 @@ body {
     color: #003912; /* Dark green font color */
     height: 100%;
     padding-bottom: 30px;
-    font-size: 18px; /* Increase the font size globally */
+    font-size: 30px; /* Increase the font size globally */
 }
 
 /* Logo styling */
@@ -112,8 +112,9 @@ body {
     margin-bottom: 15px;
 }
 
+/* Make modal text white when an image is clicked */
 .modal p {
-    color: #003912; /* Dark green color for modal text */
+    color: white; /* Set text color to white */
     font-size: 22px; /* Increase font size for modal text */
 }
 
@@ -144,7 +145,7 @@ body {
 /* Apply a different font for the copyright logo part */
 .copyright .logo {
     font-family: 'Roboto', sans-serif; /* Use Roboto for the logo */
-    font-size: 32px; /* Increase font size for the copyright symbol */
+    font-size: 50px; /* Increase font size for the copyright symbol */
     font-weight: 700; /* Make it bold */
     margin-right: 5px;
 }
