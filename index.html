@@ -3,42 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>x3z</title>
+    <title>Gallery with Interactive Images</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Logo that will stay in the top-left corner -->
+    <!-- Logo -->
     <div id="logo-container">
-        <img src="img/logo.png" alt="Logo" id="logo" />
+        <img src="logo.png" id="logo" alt="Logo">
     </div>
 
+    <!-- Image Gallery -->
     <div class="gallery">
         <div class="image-container">
-            <img src="img/image1.jpg" alt="Image 1" class="image" onclick="openImage('img/image1.jpg', 'This is Image 1')">
+            <img src="img/image1.jpg" alt="Image 1" class="image" data-text="BREADY" data-link="https://open.spotify.com/artist/3XUvZFYG65NJ9K9GKDmM7V?si=bea5b85477bc429d">
         </div>
         <div class="image-container">
-            <img src="img/image2.gif" alt="Image 2" class="image" onclick="openImage('img/image2.gif', 'This is a GIF')">
+            <img src="img/image2.jpg" alt="Image 2" class="image" data-text="This is Image 2" data-link="https://www.example2.com">
         </div>
         <div class="image-container">
-            <img src="img/image3.jpg" alt="Image 3" class="image" onclick="openImage('img/image3.jpg', 'This is Image 3')">
+            <img src="img/image3.jpg" alt="Image 3" class="image" data-text="This is Image 3" data-link="https://www.example3.com">
         </div>
     </div>
 
-    <div class="modal" id="modal">
+    <!-- Modal (hidden by default) -->
+    <div id="modal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <img id="modal-image" src="" alt="Full-size Image">
+            <img id="modal-image" src="" alt="Modal Image">
             <p id="modal-text"></p>
+            <span class="close" id="close-modal">×</span>
         </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <span class="logo">©</span> X3Z, 2025
     </div>
 
     <script src="script.js"></script>
-
-    <div class="copyright">
-        <span class="logo">©</span> 
-        X3Z, 2025
-    </div>
-    
-
 </body>
 </html>

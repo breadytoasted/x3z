@@ -1,45 +1,38 @@
-// Array of titles to cycle through
-const titles = [
-    ":3", // default title
-    "testing site",
-    "your text here",
-    "x3z",
-    "x3z",
-];
+// Select all images
+const images = document.querySelectorAll('.image');
 
-// Index to keep track of the current title
-let titleIndex = 0;
+// Get modal and modal components
+const modal = document.getElementById('modal');
+const modalImage = document.getElementById('modal-image');
+const modalText = document.getElementById('modal-text');
+const closeModal = document.getElementById('close-modal');
 
-// Function to change the title every 2 seconds
-setInterval(() => {
-    // Set the title to the next title in the array
-    document.title = titles[titleIndex];
-    
-    // Update the index to cycle through the titles
-    titleIndex = (titleIndex + 1) % titles.length; // Resets to 0 when it reaches the end
-}, 2000); // Change the title every 2 seconds
+// Loop through each image to add click event listeners
+images.forEach(image => {
+    let isImageClicked = false; // To track if the image was clicked for the first time
 
-// Function to open the image and change the page title
-function openImage(imageSrc, text) {
-    const modal = document.getElementById('modal');
-    const modalImage = document.getElementById('modal-image');
-    const modalText = document.getElementById('modal-text');
-    
-    // Change the page title to match the image or text description
-    document.title = text;  // Change the title dynamically based on the image clicked
-    
-    modalImage.src = imageSrc;
-    modalText.textContent = text;
-    
-    modal.classList.add('show');
-}
+    image.addEventListener('click', function () {
+        if (!isImageClicked) {
+            // Show modal with text on first click
+            modalImage.src = image.src;
+            modalText.textContent = image.getAttribute('data-text');
+            modal.classList.add('show');
+            isImageClicked = true;
+        } else {
+            // Redirect to link on second click
+            window.location.href = image.getAttribute('data-link');
+        }
+    });
+});
 
-// Function to close the modal and reset the title
-function closeModal() {
-    const modal = document.getElementById('modal');
-    
-    // Reset the title back to default when the modal is closed
-    document.title = "x3z";  // Reset the title to the default
-    
+// Close the modal when clicking outside the modal content
+modal.addEventListener('click', function (e) {
+    if (e.target === modal) {
+        modal.classList.remove('show');
+    }
+});
+
+// Close the modal when clicking the "X" button
+closeModal.addEventListener('click', function () {
     modal.classList.remove('show');
-}
+});

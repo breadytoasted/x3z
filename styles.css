@@ -1,24 +1,11 @@
-/* Define the custom font using @font-face for Bad Coma */
-@font-face {
-    font-family: 'Bad Coma';
-    src: url('fonts/bad-coma/bad-coma.woff2') format('woff2'),
-         url('fonts/bad-coma/bad-coma.woff') format('woff'),
-         url('fonts/bad-coma/bad-coma.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* Google font for the copyright logo (use any font you prefer) */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-/* Apply the font and font color to the whole page */
+/* Basic styles for body */
 body {
     font-family: 'Bad Coma', sans-serif;
-    background-color: black; /* Background color */
-    color: #003912; /* Dark green font color */
+    background-color: black;
+    color: #003912;
     height: 100%;
     padding-bottom: 30px;
-    font-size: 18px; /* Increase the font size globally */
+    font-size: 30px;
 }
 
 /* Logo styling */
@@ -27,30 +14,14 @@ body {
     top: 0;
     left: 0;
     z-index: 999;
-    opacity: 1;
 }
 
 #logo {
     width: 150px;
     height: auto;
-    animation: popUpFromLeft 2s forwards;
 }
 
-@keyframes popUpFromLeft {
-    0% {
-        opacity: 0;
-        transform: scale(0);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.1);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
+/* Gallery */
 .gallery {
     display: flex;
     justify-content: center;
@@ -68,16 +39,15 @@ body {
     height: 200px;
     object-fit: cover;
     cursor: pointer;
-    border-radius: 50%; /* Make images round */
-    transition: transform 1s ease; /* Fast spin duration */
+    border-radius: 50%; /* Makes images round */
+    transition: transform 1s ease;
 }
 
-/* Spinning effect on hover with fast speed */
 .image:hover {
-    transform: rotate(360deg); /* Spin the image 360 degrees */
-    transition: transform 1s ease; /* Set the duration to 1s for fast spin */
+    transform: rotate(360deg); /* Fast spin on hover */
 }
 
+/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -114,10 +84,9 @@ body {
     margin-bottom: 15px;
 }
 
-/* Make modal text white when an image is clicked */
 .modal p {
-    color: white; /* Set text color to white */
-    font-size: 22px; /* Increase font size for modal text */
+    color: white;
+    font-size: 22px;
 }
 
 .close {
@@ -129,25 +98,24 @@ body {
     cursor: pointer;
 }
 
-/* Copyright styles */
+/* Copyright Styles */
 .copyright {
     position: fixed;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.8);
-    color: #003912; /* Dark green color for copyright */
+    color: #003912;
     padding: 10px;
     width: 100%;
     text-align: center;
-    font-size: 16px; /* Increase font size for copyright */
+    font-size: 50px;
     z-index: 1000;
 }
 
-/* Apply a different font for the copyright logo part */
 .copyright .logo {
-    font-family: 'Roboto', sans-serif; /* Use Roboto for the logo */
-    font-size: 32px; /* Increase font size for the copyright symbol */
-    font-weight: 700; /* Make it bold */
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
     margin-right: 5px;
 }
