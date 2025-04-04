@@ -1,17 +1,23 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Define the custom font using @font-face */
+@font-face {
+    font-family: 'Bad Coma';
+    src: url('fonts/bad-coma/bad-coma.woff2') format('woff2'),
+         url('fonts/bad-coma/bad-coma.woff') format('woff'),
+         url('fonts/bad-coma/bad-coma.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
+/* Apply the font and font color to the whole page */
 body {
-    font-family: Arial, sans-serif;
-    background-color: black; /* Background color changed to black */
-    color: white; /* Text color set to white for contrast */
-    height: 100%; /* Ensure the body takes the full height of the page */
-    padding-bottom: 30px; /* Ensure space at the bottom for the copyright */
+    font-family: 'Bad Coma', sans-serif;
+    background-color: black; /* Background color */
+    color: #003912; /* Dark green font color */
+    height: 100%;
+    padding-bottom: 30px;
 }
 
+/* Logo styling */
 #logo-container {
     position: fixed;
     top: 0;
@@ -103,7 +109,7 @@ body {
 }
 
 .modal p {
-    color: white;
+    color: #003912; /* Dark green color for modal text */
     font-size: 18px;
 }
 
@@ -121,12 +127,12 @@ body {
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%); /* Centers the copyright text horizontally */
+    transform: translateX(-50%);
     background-color: rgba(0, 0, 0, 0.8);
-    color: white;
+    color: #003912; /* Dark green color for copyright */
     padding: 10px;
     width: 100%;
     text-align: center;
     font-size: 14px;
-    z-index: 1000; /* Make sure it stays above other content */
+    z-index: 1000;
 }

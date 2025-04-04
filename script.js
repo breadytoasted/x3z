@@ -3,7 +3,7 @@ const titles = [
     ":3", // default title
     "testing site",
     "your text here",
-    "yo",
+    "x3z",
     "x3z",
 ];
 
@@ -39,7 +39,7 @@ function closeModal() {
     const modal = document.getElementById('modal');
     
     // Reset the title back to default when the modal is closed
-    document.title = "Image and GIF Gallery";  // Reset the title to the default
+    document.title = "x3z";  // Reset the title to the default
     
     modal.classList.remove('show');
 }
