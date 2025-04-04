@@ -12,25 +12,20 @@ body {
 
 #logo-container {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: 20px; /* Positioning logo near the top-left corner */
+    left: 20px;
     z-index: 999;
     opacity: 0;
-    animation: fadeInFullScreen 2s forwards, fadeOutToTopLeft 2s 4s forwards;
+    animation: fadeInLogo 2s forwards, fadeOutToTopLeft 2s 3s forwards, fadeInTopLeft 2s 5s forwards;
 }
 
 #logo {
-    width: 80%;
+    width: 150px;
     height: auto;
-    animation: popUpFullScreen 2s forwards, fadeInTopLeft 2s 4s forwards;
+    animation: popUpFromLeft 2s forwards, fadeInTopLeft 2s 5s forwards;
 }
 
-@keyframes fadeInFullScreen {
+@keyframes fadeInLogo {
     0% {
         opacity: 0;
     }
@@ -39,36 +34,38 @@ body {
     }
 }
 
-@keyframes popUpFullScreen {
+@keyframes popUpFromLeft {
     0% {
-        width: 0%;
-        height: 0%;
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1);
     }
     100% {
-        width: 80%;
-        height: auto;
+        opacity: 1;
+        transform: scale(1);
     }
 }
 
 @keyframes fadeOutToTopLeft {
     0% {
         opacity: 1;
-        transform: scale(1);
     }
     100% {
         opacity: 0;
-        transform: scale(0.3) translate(20px, 20px); /* Shrinks and moves to the top-left corner */
     }
 }
 
 @keyframes fadeInTopLeft {
     0% {
         opacity: 0;
-        transform: scale(0.3) translate(20px, 20px); /* Initial position at the top-left corner */
+        transform: scale(0.7);
     }
     100% {
         opacity: 1;
-        transform: scale(1) translate(0, 0); /* Final position at the top-left corner */
+        transform: scale(1);
     }
 }
 

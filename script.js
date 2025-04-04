@@ -14,9 +14,9 @@ function closeModal() {
     modal.classList.remove('show');
 }
 
-// Function to hide the logo after the animation ends (around 6 seconds)
+// Function to hide the logo after the animation ends (around 7 seconds)
 window.onload = function() {
     setTimeout(function() {
         document.getElementById('logo-container').style.opacity = '0';
-    }, 6000); // Hides logo after 6 seconds
+    }, 7000); // Hides logo after 7 seconds
 };
