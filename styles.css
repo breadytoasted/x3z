@@ -6,31 +6,71 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: black; /* Background color changed to black */
-    color: white; /* Text color set to white for contrast */
+    background-color: black;
+    color: white;
 }
 
 #logo-container {
     position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 0;
-    animation: fadeInLogo 1s forwards;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 999;
+    opacity: 0;
+    animation: fadeInFullScreen 2s forwards, fadeOutToTopLeft 3s 2s forwards;
 }
 
 #logo {
-    width: 150px; /* Adjust size of the logo as needed */
+    width: 80%;
     height: auto;
+    animation: popUpFullScreen 2s forwards, fadeInTopLeft 2s 4s forwards;
 }
 
-@keyframes fadeInLogo {
+@keyframes fadeInFullScreen {
     0% {
         opacity: 0;
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes popUpFullScreen {
+    0% {
+        width: 0%;
+        height: 0%;
+    }
+    100% {
+        width: 80%;
+        height: auto;
+    }
+}
+
+@keyframes fadeOutToTopLeft {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInTopLeft {
+    0% {
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    100% {
+        opacity: 1;
+        top: 20px;
+        left: 20px;
+        transform: translate(0, 0);
     }
 }
 
@@ -80,7 +120,7 @@ body {
 
 .modal-content {
     position: relative;
-    background: #000000; /* Dark background for modal */
+    background: #333;
     padding: 20px;
     text-align: center;
     max-width: 80%;
