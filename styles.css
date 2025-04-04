@@ -6,8 +6,32 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: black; /* Changed the background to black */
-    color: white; /* Text color is set to white for contrast */
+    background-color: black; /* Background color changed to black */
+    color: white; /* Text color set to white for contrast */
+}
+
+#logo-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    animation: fadeInLogo 1s forwards;
+    z-index: 999;
+}
+
+#logo {
+    width: 150px; /* Adjust size of the logo as needed */
+    height: auto;
+}
+
+@keyframes fadeInLogo {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .gallery {
@@ -56,7 +80,7 @@ body {
 
 .modal-content {
     position: relative;
-    background: #000000; /* Slightly darker background for the modal content */
+    background: #333; /* Dark background for modal */
     padding: 20px;
     text-align: center;
     max-width: 80%;
