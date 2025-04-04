@@ -6,8 +6,8 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: black;
-    color: white;
+    background-color: black; /* Background color changed to black */
+    color: white; /* Text color set to white for contrast */
 }
 
 #logo-container {
@@ -21,7 +21,7 @@ body {
     align-items: center;
     z-index: 999;
     opacity: 0;
-    animation: fadeInFullScreen 2s forwards, fadeOutToTopLeft 3s 2s forwards;
+    animation: fadeInFullScreen 2s forwards, fadeOutToTopLeft 2s 4s forwards;
 }
 
 #logo {
@@ -53,24 +53,22 @@ body {
 @keyframes fadeOutToTopLeft {
     0% {
         opacity: 1;
+        transform: scale(1);
     }
     100% {
         opacity: 0;
+        transform: scale(0.3) translate(20px, 20px); /* Shrinks and moves to the top-left corner */
     }
 }
 
 @keyframes fadeInTopLeft {
     0% {
         opacity: 0;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        transform: scale(0.3) translate(20px, 20px); /* Initial position at the top-left corner */
     }
     100% {
         opacity: 1;
-        top: 20px;
-        left: 20px;
-        transform: translate(0, 0);
+        transform: scale(1) translate(0, 0); /* Final position at the top-left corner */
     }
 }
 
