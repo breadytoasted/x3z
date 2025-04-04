@@ -23,22 +23,18 @@ images.forEach(image => {
     });
 });
 
-// Close the modal if you click outside the modal content area
 modal.addEventListener('click', function (e) {
     if (e.target === modal) {
-        modal.classList.remove('show');  // Hide the modal
+        modal.classList.remove('show');
         images.forEach(image => {
-            // Reset the image clicked status when modal is closed
-            image.isImageClicked = false;
+            image.isImageClicked = false; // Reset state
         });
     }
 });
 
-// Close the modal when the close button is clicked
 closeModal.addEventListener('click', function () {
-    modal.classList.remove('show');  // Hide the modal
+    modal.classList.remove('show');
     images.forEach(image => {
-        // Reset the image clicked status when modal is closed
-        image.isImageClicked = false;
+        image.isImageClicked = false; // Reset state
     });
 });
