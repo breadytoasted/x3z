@@ -9,12 +9,11 @@ let currentLink = ""; // Store the link of the clicked image
 
 // Event listener for each image
 images.forEach(image => {
-    image.addEventListener('click', function () {
-        modalImage.src = image.src;  
-        modalText.textContent = image.getAttribute('data-text');  
-        modalExtraText.textContent = image.getAttribute('data-extra') || ""; // Set extra text (if exists)
-        modal.classList.add('show');  
-        currentLink = image.getAttribute('data-link'); 
+    image.addEventListener('click', () => {
+        modalImage.src = image.src;
+        modalText.textContent = image.dataset.text;
+        modalExtraText.textContent = image.dataset.extraText; // Set the extra text
+        modal.style.display = 'block';
     });
 });
 
@@ -35,4 +34,11 @@ modal.addEventListener('click', function (e) {
 // Close the modal when clicking the close button
 closeModal.addEventListener('click', function () {
     modal.classList.remove('show');
+});
+
+window.addEventListener('click', (event) => {
+    if (event.target === modal) {
+        modal.style.display = 'none';
+    }
+});
 });
