@@ -92,13 +92,29 @@ body {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
+    cursor: pointer;  /* Shows it's clickable */
+    transition: opacity 0.3s ease;
 }
 
+.modal img:hover {
+    opacity: 0.8;  /* Slight fade to indicate interactivity */
+}
+
+/* "Click image to visit link" text */
+.click-to-open {
+    color: #bbb;
+    font-size: 16px;
+    margin-top: 10px;
+    opacity: 0.7;
+}
+
+/* Modal Text */
 .modal p {
     color: white;
     font-size: 22px;
 }
 
+/* Close Button */
 .close {
     position: absolute;
     top: 10px;
