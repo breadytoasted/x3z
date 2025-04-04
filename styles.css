@@ -15,23 +15,13 @@ body {
     top: 20px; /* Positioning logo near the top-left corner */
     left: 20px;
     z-index: 999;
-    opacity: 0;
-    animation: fadeInLogo 2s forwards, fadeOutToTopLeft 2s 3s forwards, fadeInTopLeft 2s 5s forwards;
+    opacity: 1; /* Ensures the logo stays visible */
 }
 
 #logo {
     width: 150px;
     height: auto;
-    animation: popUpFromLeft 2s forwards, fadeInTopLeft 2s 5s forwards;
-}
-
-@keyframes fadeInLogo {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+    animation: popUpFromLeft 2s forwards;
 }
 
 @keyframes popUpFromLeft {
@@ -49,31 +39,11 @@ body {
     }
 }
 
-@keyframes fadeOutToTopLeft {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes fadeInTopLeft {
-    0% {
-        opacity: 0;
-        transform: scale(0.7);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
 .gallery {
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 50px;
+    margin-top: 150px; /* Adds space to ensure the logo does not overlap the gallery */
 }
 
 .image-container {
