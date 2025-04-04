@@ -68,14 +68,14 @@ body {
     height: 200px;
     object-fit: cover;
     cursor: pointer;
-    border-radius: 10px;
-    transition: transform 3s ease; /* Adjusted for slower spin */
+    border-radius: 50%; /* Make images round */
+    transition: transform 1s ease; /* Fast spin duration */
 }
 
-/* Spinning effect on hover with slower speed */
+/* Spinning effect on hover with fast speed */
 .image:hover {
     transform: rotate(360deg); /* Spin the image 360 degrees */
-    transition: transform 3s ease; /* Set the duration to 3s for slower spin */
+    transition: transform 1s ease; /* Set the duration to 1s for fast spin */
 }
 
 .modal {
