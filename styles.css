@@ -52,22 +52,20 @@ body {
 /* Gallery */
 .gallery {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 90%;
-    max-width: 1200px;
-    margin: 150px auto 0 auto; /* top margin from logo, horizontally centered */
+    gap: 100px; /* spacing between images */
+    margin-top: 180px; /* space below logo */
+    flex-wrap: wrap; /* allows stacking on smaller screens */
 }
 
 .image-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
+    flex-shrink: 0;
 }
 
 .image {
-    width: 200px;
-    height: 200px;
+    width: 280px;
+    height: 280px;
     object-fit: cover;
     cursor: pointer;
     border-radius: 50%;
@@ -160,4 +158,35 @@ body {
     font-weight: 700;
     margin-right: 5px;
     color: #B90000; /* Changed to red */
+}
+
+@media (max-width: 900px) {
+    .gallery {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .image {
+        width: 200px;
+        height: 200px;
+    }
+}
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    body {
+        font-size: 20px; /* Smaller font size for mobile */
+    }
+
+    .image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .modal p {
+        font-size: 18px; /* Smaller text in modal */
+    }
+
+    #modal-extra-text {
+        font-size: 16px; /* Smaller extra text in modal */
+    }
 }
