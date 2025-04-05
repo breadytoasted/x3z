@@ -67,9 +67,9 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.85);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
     opacity: 0;
@@ -83,44 +83,44 @@ body {
 
 .modal-content {
     position: relative;
-    width: 100vw;
-    max-width: 100vw;
-    background: #111;
-    padding: 20px 40px;
+    background: #333;
+    padding: 20px;
     text-align: center;
-    border-radius: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    max-width: 80%;
+    border-radius: 10px;
 }
 
-#modal-image {
+.modal img {
     width: 100%;
-    max-height: 80vh;
+    max-height: 400px;
     object-fit: cover;
-    cursor: pointer;
+    border-radius: 10px;
     margin-bottom: 15px;
+    cursor: pointer;
 }
 
-#modal-text,
-#modal-extra-text {
-    color: #b90000;
+/* Text inside modal */
+.modal p {
+    color: #B90000; /* Changed to red */
     font-size: 22px;
-    margin: 5px 0;
-    text-align: center;
-    word-wrap: break-word;
+}
+
+/* Extra text inside the modal */
+#modal-extra-text {
+    color: #B90000; /* Changed to red */
+    font-size: 18px;
+    margin-top: 5px;
+    opacity: 0.8;
 }
 
 .close {
     position: absolute;
-    top: 15px;
-    right: 25px;
-    font-size: 35px;
-    color: white;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #B90000; /* Changed to red */
     cursor: pointer;
 }
-
 
 /* Copyright Styles */
 .copyright {
