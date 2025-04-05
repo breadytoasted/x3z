@@ -174,3 +174,29 @@ body {
         height: 200px;
     }
 }
+
+/* Bottom Right Menu Styles */
+.bottom-right-menu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 15px;
+    border-radius: 12px;
+    z-index: 1000;
+    box-shadow: 0 0 10px #000;
+}
+
+.bottom-right-menu a {
+    color: #b90000;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.bottom-right-menu a:hover {
+    color: #ff3b3b;
+}
