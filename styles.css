@@ -51,16 +51,19 @@ body {
 
 /* Gallery */
 .gallery {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin: 180px auto 0 auto;
+    max-width: 1000px;
+    width: 90%;
+    justify-items: center;
     align-items: center;
-    gap: 100px; /* spacing between images */
-    margin-top: 180px; /* space below logo */
-    flex-wrap: wrap; /* allows stacking on smaller screens */
 }
 
 .image-container {
-    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .image {
@@ -162,31 +165,12 @@ body {
 
 @media (max-width: 900px) {
     .gallery {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 40px;
     }
 
     .image {
         width: 200px;
         height: 200px;
-    }
-}
-/* Responsive design for smaller screens */
-@media (max-width: 600px) {
-    body {
-        font-size: 20px; /* Smaller font size for mobile */
-    }
-
-    .image {
-        width: 150px;
-        height: 150px;
-    }
-
-    .modal p {
-        font-size: 18px; /* Smaller text in modal */
-    }
-
-    #modal-extra-text {
-        font-size: 16px; /* Smaller extra text in modal */
     }
 }
