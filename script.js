@@ -37,3 +37,18 @@ closeModal.addEventListener('click', function () {
     modal.classList.remove('show');
     currentLink = '';
 });
+
+const titles = [
+    "x3z",
+    "hi",
+    "stream bready mixtape",
+    "my balls itch",
+    ":3"
+];
+
+let currentTitleIndex = 0;
+
+setInterval(() => {
+    document.title = titles[currentTitleIndex];
+    currentTitleIndex = (currentTitleIndex + 1) % titles.length;
+}, 1000); // Change every 1000ms = 1 second
