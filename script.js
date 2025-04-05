@@ -14,13 +14,7 @@ images.forEach(image => {
             modalText.textContent = image.getAttribute('data-text');
 
             const extraText = image.getAttribute('data-extra');
-            const extraLink = image.getAttribute('data-extra-link');
-
-            if (extraLink) {
-                modalExtra.innerHTML = `<a href="${extraLink}" target="_blank">${extraText}</a>`;
-            } else {
-                modalExtra.textContent = extraText || '';
-            }
+            modalExtra.textContent = extraText || '';
 
             modal.classList.add('show');
             isImageClicked = true;
@@ -42,6 +36,4 @@ modal.addEventListener('click', function (e) {
 closeModal.addEventListener('click', function () {
     modal.classList.remove('show');
     images.forEach(image => {
-        image.isImageClicked = false;
-    });
-});
+        image.isImageClicked = false
