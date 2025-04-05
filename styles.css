@@ -30,22 +30,39 @@ body {
     z-index: 999;
 }
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 #logo {
     width: 150px;
     height: auto;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
 /* Gallery */
 .gallery {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 150px;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 150px auto 0 auto; /* top margin from logo, horizontally centered */
 }
 
 .image-container {
-    position: relative;
-    overflow: hidden;
+    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .image {
@@ -53,7 +70,7 @@ body {
     height: 200px;
     object-fit: cover;
     cursor: pointer;
-    border-radius: 50%; 
+    border-radius: 50%;
     transition: transform 1s ease;
 }
 
