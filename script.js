@@ -5,19 +5,19 @@ const modalText = document.getElementById('modal-text');
 const modalExtra = document.getElementById('modal-extra-text');
 const closeModal = document.getElementById('close-modal');
 
-images.forEach(image => {
-    let isImageClicked = false;
+// Track clicked images using a Map
+const clickedMap = new Map();
 
+images.forEach(image => {
     image.addEventListener('click', function () {
-        if (!isImageClicked) {
+        const isClicked = clickedMap.get(image) || false;
+
+        if (!isClicked) {
             modalImage.src = image.src;
             modalText.textContent = image.getAttribute('data-text');
-
-            const extraText = image.getAttribute('data-extra');
-            modalExtra.textContent = extraText || '';
-
+            modalExtra.textContent = image.getAttribute('data-extra') || '';
             modal.classList.add('show');
-            isImageClicked = true;
+            clickedMap.set(image, true);
         } else {
             window.location.href = image.getAttribute('data-link');
         }
@@ -27,13 +27,11 @@ images.forEach(image => {
 modal.addEventListener('click', function (e) {
     if (e.target === modal) {
         modal.classList.remove('show');
-        images.forEach(image => {
-            image.isImageClicked = false;
-        });
+        clickedMap.clear(); // Reset all click states
     }
 });
 
 closeModal.addEventListener('click', function () {
     modal.classList.remove('show');
-    images.forEach(image => {
-        image.isImageClicked = false
+    clickedMap.clear(); // Reset all click states
+});
