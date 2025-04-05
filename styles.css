@@ -96,6 +96,7 @@ body {
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
+    cursor: pointer;
 }
 
 /* Text inside modal */
