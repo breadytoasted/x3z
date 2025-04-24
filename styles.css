@@ -1,0 +1,202 @@
+/* Define the custom font using @font-face for Bad Coma */
+@font-face {
+    font-family: 'Bad Coma';
+    src: url('fonts/bad-coma/bad-coma.woff2') format('woff2'),
+         url('fonts/bad-coma/bad-coma.woff') format('woff'),
+         url('fonts/bad-coma/bad-coma.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Apply the font and font color to the whole page */
+body {
+    font-family: 'Bad Coma', sans-serif;
+    background-color: black; 
+    color: #B90000; /* Changed to red */
+    height: 100%;
+    padding-bottom: 30px;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Logo styling */
+#logo-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#logo {
+    width: 150px;
+    height: auto;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin: 180px auto 0 auto;
+    max-width: 1000px;
+    width: 90%;
+    justify-items: center;
+    align-items: center;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.image {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 1s ease;
+}
+
+.image:hover {
+    transform: rotate(360deg);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    background: #333;
+    padding: 20px;
+    text-align: center;
+    max-width: 80%;
+    border-radius: 10px;
+}
+
+.modal img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+/* Text inside modal */
+.modal p {
+    color: #B90000; /* Changed to red */
+    font-size: 22px;
+}
+
+/* Extra text inside the modal */
+#modal-extra-text {
+    color: #B90000; /* Changed to red */
+    font-size: 18px;
+    margin-top: 5px;
+    opacity: 0.8;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #B90000; /* Changed to red */
+    cursor: pointer;
+}
+
+/* Copyright Styles */
+.copyright {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #B90000; /* Changed to red */
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 50px;
+    z-index: 1000;
+}
+
+.copyright .logo {
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    margin-right: 5px;
+    color: #B90000; /* Changed to red */
+}
+
+@media (max-width: 900px) {
+    .gallery {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .image {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* Bottom Right Menu Styles */
+.bottom-right-menu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 15px;
+    border-radius: 12px;
+    z-index: 1000;
+    box-shadow: 0 0 10px #000;
+}
+
+.bottom-right-menu a {
+    color: #b90000;
+    text-decoration: none;
+    margin-bottom: 8px;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.bottom-right-menu a:hover {
+    color: #ff3b3b;
+}
